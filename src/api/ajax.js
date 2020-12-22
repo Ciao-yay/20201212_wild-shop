@@ -4,7 +4,7 @@
 */
 import axios from 'axios'
 export default function ajax(url, data = {}, type = 'GET') {
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     let promise
     if (type === 'GET') {
       // 准备 url query 参数数据
@@ -23,6 +23,7 @@ export default function ajax(url, data = {}, type = 'GET') {
       promise = axios.post(url, data)
     }
     promise.then(res => {
+      // console.log(res.data)
       resolve(res.data)
     }).catch(err => {
       reject(err)

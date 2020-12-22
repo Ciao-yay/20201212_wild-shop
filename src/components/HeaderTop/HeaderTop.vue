@@ -12,6 +12,9 @@
 </template>
 <script>
 export default {
+  computed:{
+
+  },
   props: {
     title: String,
   },
